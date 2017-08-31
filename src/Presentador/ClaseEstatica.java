@@ -23,11 +23,11 @@ import java.util.ArrayList;
  */
 public abstract class ClaseEstatica {
 
-    static ArrayList<Pais> paises = new ArrayList<>();
-    static ArrayList<ServicioPrestador> serviciosprestadores = new ArrayList<>();
-    static ArrayList<ServicioPaquete> serviciosDePaquetes = new ArrayList<>();
-    static ArrayList<Prestador> prestadores = new ArrayList<>();
-    static ArrayList<Rubro> rubros = new ArrayList<>();
+    public static ArrayList<Pais> paises = new ArrayList<>();
+    public static ArrayList<ServicioPrestador> serviciosprestadores = new ArrayList<>();
+    public static ArrayList<ServicioPaquete> serviciosDePaquetes = new ArrayList<>();
+    public static ArrayList<Prestador> prestadores = new ArrayList<>();
+    public static ArrayList<Rubro> rubros = new ArrayList<>();
 
     public void crearPaises() {
         Ciudad c1 = new Ciudad("Machu Pichu");

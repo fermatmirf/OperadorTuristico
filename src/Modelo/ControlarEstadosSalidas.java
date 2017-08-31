@@ -31,7 +31,7 @@ public class ControlarEstadosSalidas extends TimerTask {
         for (Salida salida : salidas) {
             LocalDate fechaSalida = LocalDate.parse(salida.getFecha(), formatter);
             LocalDate today = LocalDate.now( zonedId );
-            if (fechaSalida == today && salida.getEstado() == EstadoSalida.EN_VENTA) {
+            if (fechaSalida.equals(today) && salida.getEstado().equals(EstadoSalida.EN_VENTA) ) {
                 salida.setEstado(EstadoSalida.EJECUCION);
             }
         }
@@ -42,7 +42,7 @@ public class ControlarEstadosSalidas extends TimerTask {
             LocalDate fechaFinalizacion = LocalDate.parse(salida.getFecha(), formatter);
             fechaFinalizacion.plusDays(15);
             LocalDate today = LocalDate.now( zonedId );
-            if (fechaFinalizacion == today && salida.getEstado() == EstadoSalida.EJECUCION) {
+            if (fechaFinalizacion.equals(today) && salida.getEstado().equals(EstadoSalida.EJECUCION) ) {
                 salida.setEstado(EstadoSalida.FINALIZADO);
             }
         }
