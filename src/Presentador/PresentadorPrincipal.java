@@ -20,6 +20,7 @@ public class PresentadorPrincipal {
   IVistaCrearSalida vistaCrearSalida;
   IVistaCrearPaquete vistaCrearPaquete;
   IVistaModificarEstado vistaModificarEstado;
+  
   public PresentadorPrincipal(IVistaPrincipal view, IVistaCrearSalida view2, IVistaCrearPaquete view3, IVistaModificarEstado view4) {
     vistaPrincipal= view;
     vistaCrearSalida = view2;

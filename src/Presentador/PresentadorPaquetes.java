@@ -22,6 +22,7 @@ public class PresentadorPaquetes {
     private Pais pais;
     private Provincia provincia;
     private Ciudad ciudorigen;
+    private PasoFronterizo pasofronterizo;
     
     IVistaPrincipal vistaPrincipal;
     IVistaCrearPaquete vistaCrearPaquete;
@@ -83,7 +84,12 @@ public class PresentadorPaquetes {
     }
     
     public void seleccionarPasoFronterizo(PasoFronterizo pf){
-        p.agregarPasoFronterizo(pf);
+        for(PasoFronterizo pfr : pais.getPasosFronterizo()){
+            if(pfr.equals(pf)){
+                this.pasofronterizo = pfr;
+            }
+        }
+        p.agregarPasoFronterizo(pasofronterizo);
     }
     
     public void ingresarServicio(){}
