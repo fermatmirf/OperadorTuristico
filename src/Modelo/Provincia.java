@@ -19,8 +19,32 @@ public class Provincia {
     public Provincia(String nombre) {
         this.nombre = nombre;
     }
+    
     public void agregarCiudad(Ciudad c){
         this.ciudades.add(c);
         
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public ArrayList<Ciudad> getCiudades() {
+        return ciudades;
+    }
+
+    public void setCiudades(ArrayList<Ciudad> ciudades) {
+        this.ciudades = ciudades;
+    }
+
+    @Override
+    public String toString() {
+        return "Provincia{" + "nombre=" + nombre + ", ciudades=" + ciudades + '}';
+    }
+    
+    
 }

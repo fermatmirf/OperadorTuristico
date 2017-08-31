@@ -26,5 +26,34 @@ public class Pais {
     this.pasosFronterizo.add(paso);
     
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public ArrayList<Provincia> getProvincias() {
+        return provincias;
+    }
+
+    public void setProvincias(ArrayList<Provincia> provincias) {
+        this.provincias = provincias;
+    }
+
+    public ArrayList<PasoFronterizo> getPasosFronterizo() {
+        return pasosFronterizo;
+    }
+
+    public void setPasosFronterizo(ArrayList<PasoFronterizo> pasosFronterizo) {
+        this.pasosFronterizo = pasosFronterizo;
+    }
+
+    @Override
+    public String toString() {
+        return "Pais{" + "nombre=" + nombre + ", provincias=" + provincias + ", pasosFronterizo=" + pasosFronterizo + '}';
+    }
     
 }

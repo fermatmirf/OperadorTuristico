@@ -11,8 +11,25 @@ package Modelo;
  */
 public class ServicioTransporte extends ServicioSalida {
     
-    public ServicioTransporte(float precio, int cupo) {
+    private int butaca;
+
+    public ServicioTransporte(int butaca, float precio, int cupo) {
         super(precio, cupo);
+        this.butaca = butaca;
     }
+
+    public int getButaca() {
+        return butaca;
+    }
+
+    public void setButaca(int butaca) {
+        this.butaca = butaca;
+    }
+
+    @Override
+    public String toString() {
+        return "ServicioTransporte{" + "butaca=" + butaca + '}';
+    }   
+    
     
 }

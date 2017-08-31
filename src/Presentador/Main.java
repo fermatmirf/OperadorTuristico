@@ -5,12 +5,20 @@
  */
 package Presentador;
 
+import Modelo.ControlarEstadosSalidas;
+import java.util.Timer;
+
 /**
  *
  * @author fermatmir
  */
 public class Main {
-     public static void main(String[] args) {
-    
+
+    public static void main(String[] args) {
+        Timer t = new Timer();
+        ControlarEstadosSalidas ces = new ControlarEstadosSalidas(salidas);
+        // This task is scheduled to run every 10 seconds
+
+        t.scheduleAtFixedRate(ces, 0, 3600000);
     }
 }

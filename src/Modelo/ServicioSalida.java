@@ -17,6 +17,28 @@ public class ServicioSalida {
         this.precio = precio;
         this.cupo = cupo;
     }
+
+    public float getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(float precio) {
+        this.precio = precio;
+    }
+
+    public int getCupo() {
+        return cupo;
+    }
+
+    public void setCupo(int cupo) {
+        this.cupo = cupo;
+    }
+
+    @Override
+    public String toString() {
+        return "ServicioSalida{" + "precio=" + precio + ", cupo=" + cupo + '}';
+    }
+    
     
     
 }

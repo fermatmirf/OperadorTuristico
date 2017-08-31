@@ -62,4 +62,115 @@ public class Paquete {
         this.estado = estado;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getItinerario() {
+        return itinerario;
+    }
+
+    public void setItinerario(String itinerario) {
+        this.itinerario = itinerario;
+    }
+
+    public String getCondcomerciales() {
+        return condcomerciales;
+    }
+
+    public void setCondcomerciales(String condcomerciales) {
+        this.condcomerciales = condcomerciales;
+    }
+
+    public int getCantdias() {
+        return cantdias;
+    }
+
+    public void setCantdias(int cantdias) {
+        this.cantdias = cantdias;
+    }
+
+    public int getCantnoches() {
+        return cantnoches;
+    }
+
+    public void setCantnoches(int cantnoches) {
+        this.cantnoches = cantnoches;
+    }
+
+    public Ciudad getCiudorigen() {
+        return ciudorigen;
+    }
+
+    public void setCiudorigen(Ciudad ciudorigen) {
+        this.ciudorigen = ciudorigen;
+    }
+
+    public Ciudad getCiuddestino() {
+        return ciuddestino;
+    }
+
+    public void setCiuddestino(Ciudad ciuddestino) {
+        this.ciuddestino = ciuddestino;
+    }
+
+    public ArrayList<Ciudad> getCiudadDestino() {
+        return ciudadDestino;
+    }
+
+    public void setCiudadDestino(ArrayList<Ciudad> ciudadDestino) {
+        this.ciudadDestino = ciudadDestino;
+    }
+
+    public ArrayList<PasoFronterizo> getPasosFronterizos() {
+        return pasosFronterizos;
+    }
+
+    public void setPasosFronterizos(ArrayList<PasoFronterizo> pasosFronterizos) {
+        this.pasosFronterizos = pasosFronterizos;
+    }
+
+    public ArrayList<ServicioPaquete> getServiciosPaquetes() {
+        return serviciosPaquetes;
+    }
+
+    public void setServiciosPaquetes(ArrayList<ServicioPaquete> serviciosPaquetes) {
+        this.serviciosPaquetes = serviciosPaquetes;
+    }
+
+    public ArrayList<Salida> getSalidas() {
+        return salidas;
+    }
+
+    public void setSalidas(ArrayList<Salida> salidas) {
+        this.salidas = salidas;
+    }
+
+    public EstadoPaquete getEstado() {
+        return estado;
+    }
+
+    public void setEstado(EstadoPaquete estado) {
+        this.estado = estado;
+    }
+
+    @Override
+    public String toString() {
+        return "Paquete{" + "nombre=" + nombre + ", descripcion=" + descripcion + ", itinerario=" + itinerario + ", condcomerciales=" + condcomerciales + ", cantdias=" + cantdias + ", cantnoches=" + cantnoches + ", ciudorigen=" + ciudorigen + ", ciuddestino=" + ciuddestino + ", ciudadDestino=" + ciudadDestino + ", pasosFronterizos=" + pasosFronterizos + ", serviciosPaquetes=" + serviciosPaquetes + ", salidas=" + salidas + ", estado=" + estado + '}';
+    }
+    
+    
+
 }

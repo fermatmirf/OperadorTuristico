@@ -19,5 +19,36 @@ public class ServicioPaquete {
         this.hastaDias = hastaDias;
         this.servicio = s;
     }
+
+    public int getDesdeDias() {
+        return desdeDias;
+    }
+
+    public void setDesdeDias(int desdeDias) {
+        this.desdeDias = desdeDias;
+    }
+
+    public int getHastaDias() {
+        return hastaDias;
+    }
+
+    public void setHastaDias(int hastaDias) {
+        this.hastaDias = hastaDias;
+    }
+
+    public Servicio getServicio() {
+        return servicio;
+    }
+
+    public void setServicio(Servicio servicio) {
+        this.servicio = servicio;
+    }
+
+    @Override
+    public String toString() {
+        return "ServicioPaquete{" + "desdeDias=" + desdeDias + ", hastaDias=" + hastaDias + ", servicio=" + servicio + '}';
+    }
+    
+    
     
 }

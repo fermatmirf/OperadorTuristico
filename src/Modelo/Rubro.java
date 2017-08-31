@@ -33,6 +33,19 @@ public class Rubro {
     this.tipos.add(t);
     
     }
+
+    public ArrayList<Tipo> getTipos() {
+        return tipos;
+    }
+
+    public void setTipos(ArrayList<Tipo> tipos) {
+        this.tipos = tipos;
+    }
+
+    @Override
+    public String toString() {
+        return "Rubro{" + "descripcion=" + descripcion + ", tipos=" + tipos + '}';
+    }
     
     
 }

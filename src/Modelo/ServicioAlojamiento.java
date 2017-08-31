@@ -10,9 +10,29 @@ package Modelo;
  * @author fermatmir
  */
 public class ServicioAlojamiento extends ServicioSalida {
-    
-    public ServicioAlojamiento(float precio, int cupo) {
+    private int cantidadEstrellas;
+
+    public ServicioAlojamiento(int cantidadEstrellas, float precio, int cupo) {
         super(precio, cupo);
+        this.cantidadEstrellas = cantidadEstrellas;
     }
+    
+
+
+    public int getCantidadEstrellas() {
+        return cantidadEstrellas;
+    }
+
+    public void setCantidadEstrellas(int cantidadEstrellas) {
+        this.cantidadEstrellas = cantidadEstrellas;
+    }
+
+    @Override
+    public String toString() {
+        return "ServicioAlojamiento{" + "cantidadEstrellas=" + cantidadEstrellas + '}';
+    }
+    
+    
+    
     
 }

@@ -5,8 +5,6 @@
  */
 package Modelo;
 
-import java.util.Date;
-
 /**
  *
  * @author fermatmir
@@ -14,8 +12,53 @@ import java.util.Date;
 public class Salida {
     
     private int numero,  cupo;
-    private Date fecha;
-    
-    
+    private String fecha;
+    private EstadoSalida estado;
+
+    public Salida(int numero, int cupo, String fecha, EstadoSalida estado) {
+        this.numero = numero;
+        this.cupo = cupo;
+        this.fecha = fecha;
+        this.estado = estado;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public int getCupo() {
+        return cupo;
+    }
+
+    public void setCupo(int cupo) {
+        this.cupo = cupo;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public EstadoSalida getEstado() {
+        return estado;
+    }
+
+    public void setEstado(EstadoSalida estado) {
+        this.estado = estado;
+    }
+
+    @Override
+    public String toString() {
+        return "Salida{" + "numero=" + numero + ", cupo=" + cupo + ", fecha=" + fecha + ", estado=" + estado + '}';
+    }
+
+  
     
 }

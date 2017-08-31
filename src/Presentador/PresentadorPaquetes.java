@@ -13,10 +13,10 @@ import Modelo.Paquete;
  *
  * @author fermatmir
  */
-public class ControladorPaquetes {
+public class PresentadorPaquetes {
     private Paquete p; 
     
-    public ControladorPaquetes(){};
+    public PresentadorPaquetes(){};
     
     public void iniciarCreacionPaquete(){
         p = new Paquete();

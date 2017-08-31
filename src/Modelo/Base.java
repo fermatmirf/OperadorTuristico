@@ -3,14 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Presentador;
+package Modelo;
 
 /**
  *
- * @author fermatmir
+ * @author au6usto
  */
-public class ControladorSalida {
-    public void iniciarSalida(){
-        
-    }
+public enum Base {
+    SIMPLE, DOBLE, TRIPLE, CUADRUPLE, QUINTUPLE
 }

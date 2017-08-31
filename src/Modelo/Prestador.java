@@ -51,6 +51,12 @@ public class Prestador {
     public void setDomicilioLegal(String domicilioLegal) {
         this.domicilioLegal = domicilioLegal;
     }
+
+    @Override
+    public String toString() {
+        return "Prestador{" + "razonSocial=" + razonSocial + ", cuit=" + cuit + ", telefono=" + telefono + ", domicilioLegal=" + domicilioLegal + '}';
+    }
+    
     
     
     
