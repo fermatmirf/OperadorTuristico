@@ -12,6 +12,7 @@ import Presentador.ClaseEstatica;
 import Presentador.IVistaCrearPaquete;
 import Presentador.PresentadorPaquetes;
 import java.util.ArrayList;
+import javax.swing.JComboBox;
 
 /**
  *
@@ -25,11 +26,15 @@ public class VistaCrearPaquete extends javax.swing.JFrame implements IVistaCrear
     public VistaCrearPaquete() {
         initComponents();
         ArrayList<Pais> paises = getPresenter().mostrarPaises();
+        this.fillComboBox(paises, jPaisOrigen);
+        this.fillComboBox(paises, jPaisDestino);
         
     }
     
-    public void fillComboBox(ArrayList paises){
-        
+    public void fillComboBox(ArrayList paises, JComboBox combo){
+        for(Object pais : paises) {
+            combo.addItem(pais);
+        }
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -66,9 +71,9 @@ public class VistaCrearPaquete extends javax.swing.JFrame implements IVistaCrear
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox<>();
-        jComboBox5 = new javax.swing.JComboBox<>();
-        jComboBox6 = new javax.swing.JComboBox<>();
+        jPaisDestino = new javax.swing.JComboBox<>();
+        jProvinciaDestino = new javax.swing.JComboBox<>();
+        jCiudadDestino = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -156,11 +161,26 @@ public class VistaCrearPaquete extends javax.swing.JFrame implements IVistaCrear
 
         jLabel12.setText("Ciudad");
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPaisDestino.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPaisDestino.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jPaisDestinoItemStateChanged(evt);
+            }
+        });
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jProvinciaDestino.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jProvinciaDestino.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jProvinciaDestinoItemStateChanged(evt);
+            }
+        });
 
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jCiudadDestino.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jCiudadDestino.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jCiudadDestinoItemStateChanged(evt);
+            }
+        });
 
         jLabel13.setText("Pais");
 
@@ -257,16 +277,16 @@ public class VistaCrearPaquete extends javax.swing.JFrame implements IVistaCrear
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jPaisDestino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addComponent(jLabel13))
                                                 .addGap(18, 18, 18)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jProvinciaDestino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addComponent(jLabel14))
                                                 .addGap(18, 18, 18)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(jLabel15)
-                                                    .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                    .addComponent(jCiudadDestino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(jPaisOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -362,9 +382,9 @@ public class VistaCrearPaquete extends javax.swing.JFrame implements IVistaCrear
                                             .addComponent(jLabel15))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                            .addComponent(jPaisDestino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jProvinciaDestino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jCiudadDestino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(47, 47, 47)
@@ -449,14 +469,30 @@ public class VistaCrearPaquete extends javax.swing.JFrame implements IVistaCrear
         }
     }//GEN-LAST:event_jProvinciaOrigenItemStateChanged
 
+    private void jProvinciaDestinoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jProvinciaDestinoItemStateChanged
+        Provincia prov = (Provincia) jProvinciaDestino.getSelectedItem();
+        for (Ciudad ciudad:  prov.getCiudades()){
+            jCiudadDestino.addItem(ciudad);
+        }
+    }//GEN-LAST:event_jProvinciaDestinoItemStateChanged
+
+    private void jCiudadDestinoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jCiudadDestinoItemStateChanged
+        
+    }//GEN-LAST:event_jCiudadDestinoItemStateChanged
+
+    private void jPaisDestinoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jPaisDestinoItemStateChanged
+        Pais p = (Pais) jPaisDestino.getSelectedItem();
+        for (Provincia provincia :  p.getProvincias()){
+            jProvinciaDestino.addItem(provincia);
+        }
+    }//GEN-LAST:event_jPaisDestinoItemStateChanged
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<Object> jCiudadDestino;
     private javax.swing.JComboBox<Object> jCiudadOrigen;
     private javax.swing.JComboBox<String> jComboBox10;
     private javax.swing.JComboBox<String> jComboBox11;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox5;
-    private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JComboBox<String> jComboBox7;
     private javax.swing.JComboBox<String> jComboBox8;
     private javax.swing.JComboBox<String> jComboBox9;
@@ -486,7 +522,9 @@ public class VistaCrearPaquete extends javax.swing.JFrame implements IVistaCrear
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JComboBox<String> jPaisDestino;
     private javax.swing.JComboBox<Object> jPaisOrigen;
+    private javax.swing.JComboBox<Object> jProvinciaDestino;
     private javax.swing.JComboBox<Object> jProvinciaOrigen;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
