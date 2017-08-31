@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Presentador.PresentadorPaquetes;
 import Presentador.PresentadorSalidas;
 
 /**
@@ -13,10 +14,12 @@ import Presentador.PresentadorSalidas;
  */
 public class VistaCrearSalida extends javax.swing.JFrame implements Presentador.IVistaCrearSalida {
     private PresentadorSalidas presentadorSalidas;
+    private VistaPrincipal vistaPrincipal;
     /**
      * Creates new form VistaCrearSalida
      */
     public VistaCrearSalida() {
+        presentadorSalidas = new PresentadorSalidas(this);
         initComponents();
     }
 

@@ -140,12 +140,10 @@ public class VistaPrincipal extends javax.swing.JFrame implements IVistaPrincipa
 
     @Override
     public void updateModelFromView() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void updateViewFromModel() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override

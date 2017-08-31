@@ -35,13 +35,13 @@ public class PresentadorModificarEstado {
             }
         }
     }
-    public DefaultTableModel getSalidas(Paquete p){
-         
+    public DefaultTableModel getSalidas(Object p){
+        Paquete p2 = (Paquete) p;
         DefaultTableModel table = new DefaultTableModel();
         table.addColumn("Id");
         table.addColumn("Nombre");
         table.addColumn("Estado");
-        for (Salida salida : p.getSalidas()) {
+        for (Salida salida : p2.getSalidas()) {
             Object[] row = new Object[2];
             row[0] = salida.getNumero();
             row[1] = salida.getEstado();

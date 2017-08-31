@@ -20,20 +20,21 @@ import javax.swing.JComboBox;
  */
 public class VistaCrearPaquete extends javax.swing.JFrame implements IVistaCrearPaquete {
     private PresentadorPaquetes presentadorPaquetes;
+    private VistaPrincipal vistaPrincipal;
     /**
      * Creates new form VistaCrearPaquete
      */
     public VistaCrearPaquete() {
         initComponents();
-        ArrayList<Pais> paises = getPresenter().mostrarPaises();
-        this.fillComboBox(paises, jPaisOrigen);
-        this.fillComboBox(paises, jPaisDestino);
+        presentadorPaquetes = new PresentadorPaquetes(this, vistaPrincipal);
+        this.updateViewFromModel();
         
     }
     
     public void fillComboBox(ArrayList paises, JComboBox combo){
         for(Object pais : paises) {
             combo.addItem(pais);
+            System.out.println("asdasd");
         }
     }
     /**
@@ -558,9 +559,9 @@ public class VistaCrearPaquete extends javax.swing.JFrame implements IVistaCrear
 
     @Override
     public void updateViewFromModel() {
-        for (Pais pais : ClaseEstatica.paises){
-            jPaisOrigen.addItem(pais);
-        }
+        ArrayList<Pais> paises = getPresenter().mostrarPaises();
+        this.fillComboBox(paises, jPaisOrigen);
+        this.fillComboBox(paises, jPaisDestino);
     }
     
     @Override
