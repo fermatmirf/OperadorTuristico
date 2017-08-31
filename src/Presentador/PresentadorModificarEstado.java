@@ -5,6 +5,9 @@
  */
 package Presentador;
 
+import Modelo.Paquete;
+import java.util.ArrayList;
+
 /**
  *
  * @author fermatmir
@@ -14,5 +17,9 @@ public class PresentadorModificarEstado {
     
     public PresentadorModificarEstado(IVistaModificarEstado vistaModificarEstado){
         this.vistaModificarEstado = vistaModificarEstado;
+    }
+    
+    public ArrayList<Paquete> mostrarPaquetes() {
+        return ClaseEstatica.paquetes;
     }
 }

@@ -11,6 +11,7 @@ import Modelo.Provincia;
 import Presentador.ClaseEstatica;
 import Presentador.IVistaCrearPaquete;
 import Presentador.PresentadorPaquetes;
+import java.util.ArrayList;
 
 /**
  *
@@ -23,8 +24,13 @@ public class VistaCrearPaquete extends javax.swing.JFrame implements IVistaCrear
      */
     public VistaCrearPaquete() {
         initComponents();
+        ArrayList<Pais> paises = getPresenter().mostrarPaises();
+        
     }
-
+    
+    public void fillComboBox(ArrayList paises){
+        
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
