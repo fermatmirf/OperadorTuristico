@@ -19,7 +19,6 @@ public class Paquete {
    private int cantdias;
    private int cantnoches;
    private Ciudad ciudorigen;
-   private Ciudad ciuddestino;
    private ArrayList<Ciudad> ciudadDestino;
    private ArrayList<PasoFronterizo> pasosFronterizos;
    private ArrayList<ServicioPaquete> serviciosPaquetes;
@@ -119,14 +118,6 @@ public class Paquete {
         this.ciudorigen = ciudorigen;
     }
 
-    public Ciudad getCiuddestino() {
-        return ciuddestino;
-    }
-
-    public void setCiuddestino(Ciudad ciuddestino) {
-        this.ciuddestino = ciuddestino;
-    }
-
     public ArrayList<Ciudad> getCiudadDestino() {
         return ciudadDestino;
     }
@@ -167,13 +158,8 @@ public class Paquete {
         this.estado = estado;
     }
 
-    @Override
-    public String toString() {
-        return "Paquete{" + "nombre=" + nombre + ", descripcion=" + descripcion + ", itinerario=" + itinerario + ", condcomerciales=" + condcomerciales + ", cantdias=" + cantdias + ", cantnoches=" + cantnoches + ", ciudorigen=" + ciudorigen + ", ciuddestino=" + ciuddestino + ", ciudadDestino=" + ciudadDestino + ", pasosFronterizos=" + pasosFronterizos + ", serviciosPaquetes=" + serviciosPaquetes + ", salidas=" + salidas + ", estado=" + estado + '}';
-    }
-
-    public void crearServicioSalida(ServicioPrestador servicioprestador, float precio, int cupo) {
-       this.salida.crearServicioSalida(servicioprestador, precio, cupo);
+    public void crearServicioSalida(ServicioPrestador servicioprestador, float precio, int cupo, ServicioPaquete servicioPaquete) {
+       this.salida.crearServicioSalida(servicioprestador, precio, cupo, servicioPaquete);
     }
 
     public void crearTarifa(Base base, float precio) {
@@ -185,6 +171,11 @@ public class Paquete {
         this.salida.setFecha(fecha);
         this.salida.setEstado(EstadoSalida.EJECUCION);
         this.salidas.add(salida);
+    }
+
+    @Override
+    public String toString() {
+        return "Paquete{" + "nombre=" + nombre + ", descripcion=" + descripcion + ", itinerario=" + itinerario + ", condcomerciales=" + condcomerciales + ", cantdias=" + cantdias + ", cantnoches=" + cantnoches + ", ciudorigen=" + ciudorigen + ", ciudadDestino=" + ciudadDestino + ", pasosFronterizos=" + pasosFronterizos + ", serviciosPaquetes=" + serviciosPaquetes + ", salidas=" + salidas + ", estado=" + estado + ", salida=" + salida + '}';
     }
     
     

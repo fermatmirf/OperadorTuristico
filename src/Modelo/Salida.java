@@ -69,8 +69,8 @@ public class Salida {
         return "Salida{" + "numero=" + numero + ", cupo=" + cupo + ", fecha=" + fecha + ", estado=" + estado + '}';
     }
 
-    public void crearServicioSalida(ServicioPrestador servicioprestador, float precio, int cupo) {
-        ServicioSalida ssalida = new ServicioSalida(servicioprestador,precio, cupo);
+    public void crearServicioSalida(ServicioPrestador servicioprestador, float precio, int cupo, ServicioPaquete servicioPaquete) {
+        ServicioSalida ssalida = new ServicioSalida(precio, cupo, servicioprestador, servicioPaquete);
         serviciosalidas.add(ssalida);
     }
 

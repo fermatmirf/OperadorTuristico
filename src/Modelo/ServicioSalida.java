@@ -13,11 +13,13 @@ public class ServicioSalida {
     private float precio;
     private int cupo;
     private ServicioPrestador servicioprestador;
+    private ServicioPaquete servicioPaquete;
 
-    public ServicioSalida(ServicioPrestador sprestador,float precio, int cupo) {
+    public ServicioSalida(float precio, int cupo, ServicioPrestador servicioprestador, ServicioPaquete servicioPaquete) {
         this.precio = precio;
         this.cupo = cupo;
-        this.servicioprestador = sprestador;
+        this.servicioprestador = servicioprestador;
+        this.servicioPaquete = servicioPaquete;
     }
 
     public float getPrecio() {
@@ -36,11 +38,28 @@ public class ServicioSalida {
         this.cupo = cupo;
     }
 
+    public ServicioPrestador getServicioprestador() {
+        return servicioprestador;
+    }
+
+    public void setServicioprestador(ServicioPrestador servicioprestador) {
+        this.servicioprestador = servicioprestador;
+    }
+
+    public ServicioPaquete getServicioPaquete() {
+        return servicioPaquete;
+    }
+
+    public void setServicioPaquete(ServicioPaquete servicioPaquete) {
+        this.servicioPaquete = servicioPaquete;
+    }
+
     @Override
     public String toString() {
-        return "ServicioSalida{" + "precio=" + precio + ", cupo=" + cupo + '}';
+        return "ServicioSalida{" + "precio=" + precio + ", cupo=" + cupo + ", servicioprestador=" + servicioprestador + ", servicioPaquete=" + servicioPaquete + '}';
     }
-    
+
+     
     
     
 }

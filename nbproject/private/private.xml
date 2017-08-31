@@ -5,12 +5,17 @@
         <group>
             <file>file:/home/au6usto/NetbeansProjects/OperadorTuristico/src/Presentador/PresentadorSalidas.java</file>
             <file>file:/home/au6usto/NetbeansProjects/OperadorTuristico/src/Modelo/ControlarEstadosSalidas.java</file>
-            <file>file:/home/au6usto/NetbeansProjects/OperadorTuristico/src/Modelo/Provincia.java</file>
             <file>file:/home/au6usto/NetbeansProjects/OperadorTuristico/src/Modelo/Base.java</file>
+            <file>file:/home/au6usto/NetbeansProjects/OperadorTuristico/src/Presentador/ClaseEstatica.java</file>
+            <file>file:/home/au6usto/NetbeansProjects/OperadorTuristico/src/Presentador/IVistaCrearPaquete.java</file>
+            <file>file:/home/au6usto/NetbeansProjects/OperadorTuristico/src/Presentador/Main.java</file>
+            <file>file:/home/au6usto/NetbeansProjects/OperadorTuristico/src/Modelo/ServicioSalida.java</file>
+            <file>file:/home/au6usto/NetbeansProjects/OperadorTuristico/src/Modelo/Pais.java</file>
+            <file>file:/home/au6usto/NetbeansProjects/OperadorTuristico/src/Modelo/Rubro.java</file>
+            <file>file:/home/au6usto/NetbeansProjects/OperadorTuristico/src/Presentador/PresentadorPaquetes.java</file>
+            <file>file:/home/au6usto/NetbeansProjects/OperadorTuristico/src/Modelo/Provincia.java</file>
             <file>file:/home/au6usto/NetbeansProjects/OperadorTuristico/src/Modelo/ServicioAlojamiento.java</file>
             <file>file:/home/au6usto/NetbeansProjects/OperadorTuristico/src/Modelo/ServicioPaquete.java</file>
-            <file>file:/home/au6usto/NetbeansProjects/OperadorTuristico/src/Presentador/ClaseEstatica.java</file>
-            <file>file:/home/au6usto/NetbeansProjects/OperadorTuristico/src/Presentador/Main.java</file>
             <file>file:/home/au6usto/NetbeansProjects/OperadorTuristico/src/Modelo/EstadoPaquete.java</file>
             <file>file:/home/au6usto/NetbeansProjects/OperadorTuristico/src/Modelo/Ciudad.java</file>
             <file>file:/home/au6usto/NetbeansProjects/OperadorTuristico/src/Modelo/ServicioPrestador.java</file>
@@ -20,11 +25,9 @@
             <file>file:/home/au6usto/NetbeansProjects/OperadorTuristico/src/Modelo/EstadoSalida.java</file>
             <file>file:/home/au6usto/NetbeansProjects/OperadorTuristico/src/Modelo/Servicio.java</file>
             <file>file:/home/au6usto/NetbeansProjects/OperadorTuristico/src/Modelo/ServicioTransporte.java</file>
-            <file>file:/home/au6usto/NetbeansProjects/OperadorTuristico/src/Modelo/ServicioSalida.java</file>
+            <file>file:/home/au6usto/NetbeansProjects/OperadorTuristico/src/Presentador/PresentadorModificarEstado.java</file>
             <file>file:/home/au6usto/NetbeansProjects/OperadorTuristico/src/Modelo/Prestador.java</file>
-            <file>file:/home/au6usto/NetbeansProjects/OperadorTuristico/src/Modelo/Pais.java</file>
-            <file>file:/home/au6usto/NetbeansProjects/OperadorTuristico/src/Modelo/Rubro.java</file>
-            <file>file:/home/au6usto/NetbeansProjects/OperadorTuristico/src/Presentador/PresentadorPaquetes.java</file>
+            <file>file:/home/au6usto/NetbeansProjects/OperadorTuristico/src/Presentador/PresentadorPrincipal.java</file>
         </group>
     </open-files>
 </project-private>

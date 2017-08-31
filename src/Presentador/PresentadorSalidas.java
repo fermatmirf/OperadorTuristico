@@ -7,8 +7,9 @@ package Presentador;
 
 import Modelo.Base;
 import Modelo.Paquete;
-import Modelo.Salida;
+import Modelo.ServicioPaquete;
 import Modelo.ServicioPrestador;
+import java.util.ArrayList;
 
 /**
  *
@@ -32,9 +33,14 @@ public class PresentadorSalidas {
             }
         }
         this.paquete.crearSalida();
-        //this.salida = new Salida();
     }
-    public void ingresarServicioPrestador(String nombre, float precio, int cupo){
+    
+    public ArrayList<Paquete> mostrarPaquetes() {
+        return ClaseEstatica.paquetes;
+    }
+    
+  
+    public void ingresarServicioPrestador(String nombre, float precio, int cupo, ServicioPaquete servicioPaquete){
         if(!nombre.isEmpty()){
             for(ServicioPrestador sp : ClaseEstatica.serviciosprestadores){
                 if(sp.getNombre().equals(nombre)){
@@ -43,7 +49,7 @@ public class PresentadorSalidas {
             }
             
         }
-        paquete.crearServicioSalida(servicioprestador,precio,cupo);    
+        paquete.crearServicioSalida(servicioprestador,precio,cupo, servicioPaquete);    
         
     }
     

@@ -11,14 +11,14 @@ package Modelo;
  */
 public class FactoriaServicios {
     
-    public static ServicioSalida crearServicio(String tiposervicio, ServicioPrestador sp, int butaca, int estrellas, float precio, int cupo){
+    public static ServicioSalida crearServicio(String tiposervicio, ServicioPrestador sp, int butaca, int estrellas, float precio, int cupo, ServicioPaquete servicioPaquete){
         ServicioSalida s = null;
         
         if(tiposervicio == "Alojamiento"){
-             s = new ServicioAlojamiento(sp,estrellas, precio, cupo);
+             s = new ServicioAlojamiento(sp,estrellas, precio, cupo, servicioPaquete);
         }
         else{
-             s = new ServicioTransporte(sp, butaca, precio, cupo);
+             s = new ServicioTransporte(sp, butaca, precio, cupo, servicioPaquete);
         }
         return s;
     }
