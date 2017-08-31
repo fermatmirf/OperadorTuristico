@@ -18,7 +18,10 @@ import java.util.ArrayList;
  * @author fermatmir
  */
 public class PresentadorPaquetes {
-    private Paquete p; 
+    private Paquete p;
+    private Pais pais;
+    private Provincia provincia;
+    private Ciudad ciudorigen;
     
     IVistaPrincipal vistaPrincipal;
     IVistaCrearPaquete vistaCrearPaquete;
@@ -31,11 +34,7 @@ public class PresentadorPaquetes {
     public void iniciarCreacionPaquete(){
         p = new Paquete();
     }
-    
-    public void seleccionarCiudadOrigen(Ciudad ciudad){
-        p.setCiudorigen(ciudad);
-    }
-    
+   
     public ArrayList<Pais> mostrarPaises(){
         return ClaseEstatica.paises;
     }
@@ -52,14 +51,33 @@ public class PresentadorPaquetes {
         return pais.getPasosFronterizo();
     }
     
-    public void seleccionarPais(Pais pais){
+    public void seleccionarPais(Pais paiss){
+        for(Pais pai : ClaseEstatica.paises){
+            if(pai.equals(paiss)){
+                this.pais = pai;
+            }
+        }
         this.mostrarProvincias(pais);
     }
     
-    public void seleccionarProvincia(Provincia prov){
-        this.mostrarCiudades(prov);
+    public void seleccionarProvincia(Provincia provin){
+        for(Provincia prov : pais.getProvincias()){
+            if(prov.equals(provin)){
+                this.provincia = prov;
+            }
+        }
+        this.mostrarCiudades(provincia);
     }
-
+     
+    public void seleccionarCiudadOrigen(Ciudad ciudad){
+        for(Ciudad ciud : provincia.getCiudades()){
+            if(ciud.equals(ciudad)){
+                this.ciudorigen = ciud;
+            }
+        }
+        p.setCiudorigen(ciudorigen);
+    }
+    
     public void seleccionarCiudadDestino(Ciudad ciudad){
         p.agregarCiudadDestino(ciudad);
     }
