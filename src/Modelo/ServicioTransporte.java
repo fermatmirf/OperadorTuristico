@@ -13,8 +13,8 @@ public class ServicioTransporte extends ServicioSalida {
     
     private int butaca;
 
-    public ServicioTransporte(int butaca, float precio, int cupo) {
-        super(precio, cupo);
+    public ServicioTransporte(ServicioPrestador sprestador,int butaca, float precio, int cupo) {
+        super(sprestador, precio, cupo);
         this.butaca = butaca;
     }
 

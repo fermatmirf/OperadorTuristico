@@ -12,8 +12,8 @@ package Modelo;
 public class ServicioAlojamiento extends ServicioSalida {
     private int cantidadEstrellas;
 
-    public ServicioAlojamiento(int cantidadEstrellas, float precio, int cupo) {
-        super(precio, cupo);
+    public ServicioAlojamiento(ServicioPrestador servicioprestador, int cantidadEstrellas, float precio, int cupo) {
+        super(servicioprestador, precio, cupo);
         this.cantidadEstrellas = cantidadEstrellas;
     }
     

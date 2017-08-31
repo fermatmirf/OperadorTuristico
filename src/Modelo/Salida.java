@@ -5,6 +5,8 @@
  */
 package Modelo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author fermatmir
@@ -14,7 +16,15 @@ public class Salida {
     private int numero,  cupo;
     private String fecha;
     private EstadoSalida estado;
-
+    private ArrayList<Tarifa> tarifas;
+    private ArrayList<ServicioSalida> serviciosalidas;
+    
+    public Salida(){
+        this.estado = EstadoSalida.CREADO;
+        this.tarifas = new ArrayList<>();
+        this.serviciosalidas = new ArrayList<>();
+    }
+    
     public Salida(int numero, int cupo, String fecha, EstadoSalida estado) {
         this.numero = numero;
         this.cupo = cupo;
@@ -57,6 +67,16 @@ public class Salida {
     @Override
     public String toString() {
         return "Salida{" + "numero=" + numero + ", cupo=" + cupo + ", fecha=" + fecha + ", estado=" + estado + '}';
+    }
+
+    public void crearServicioSalida(ServicioPrestador servicioprestador, float precio, int cupo) {
+        ServicioSalida ssalida = new ServicioSalida(servicioprestador,precio, cupo);
+        serviciosalidas.add(ssalida);
+    }
+
+    public void crearTarifa(Base base, float precio) {
+       Tarifa tarifa = new Tarifa(base,precio);
+       tarifas.add(tarifa);
     }
 
   

@@ -1,7 +1,11 @@
 package Presentador;
 
 import Modelo.Ciudad;
+import Modelo.Pais;
 import Modelo.Paquete;
+import Modelo.PasoFronterizo;
+import Modelo.Provincia;
+import java.util.ArrayList;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -23,41 +27,45 @@ public class PresentadorPaquetes {
         this.vistaCrearPaquete = vistaCrearPaquete;
         this.vistaPrincipal = vistaPrincipal;
     }
-    
-    
+        
     public void iniciarCreacionPaquete(){
         p = new Paquete();
     }
     
-    public void ingresarCiudadOrigen(Ciudad ciudad){
-    
+    public void seleccionarCiudadOrigen(Ciudad ciudad){
+        p.setCiudorigen(ciudad);
     }
-    public void mostrarPaises(){
     
+    public ArrayList<Pais> mostrarPaises(){
+        return ClaseEstatica.paises;
     }
-    public void mostrarProvincias(){
     
+    public ArrayList<Provincia> mostrarProvincias(Pais pais){
+        return pais.getProvincias();
     }
-    public void mostrarCiudades(){
     
+    public ArrayList<Ciudad> mostrarCiudades(Provincia prov){
+        return prov.getCiudades();
     }
-    public void mostrarPasosFronterizos(){
     
+    public ArrayList<PasoFronterizo> mostrarPasosFronterizos(Pais pais){
+        return pais.getPasosFronterizo();
     }
-    public void seleccionPais(){
     
+    public void seleccionarPais(Pais pais){
+        this.mostrarProvincias(pais);
     }
-    public void seleccionarProvincia(){
     
+    public void seleccionarProvincia(Provincia prov){
+        this.mostrarCiudades(prov);
     }
-    public void seleccionarCiudadOrigen(){
-    
+
+    public void seleccionarCiudadDestino(Ciudad ciudad){
+        p.agregarCiudadDestino(ciudad);
     }
-    public void seleccionarCiudadDestino(){
     
-    }
-    public void seleccionarPasoFronterizo(){
-    
+    public void seleccionarPasoFronterizo(PasoFronterizo pf){
+        p.agregarPasoFronterizo(pf);
     }
     
     public void ingresarServicio(){}

@@ -25,7 +25,7 @@ public class Paquete {
    private ArrayList<ServicioPaquete> serviciosPaquetes;
    private ArrayList<Salida> salidas;
    private EstadoPaquete estado;
-
+   private Salida salida;
    
    public Paquete(){
        this.estado = estado.CREADO;
@@ -34,20 +34,16 @@ public class Paquete {
        this.serviciosPaquetes  = new ArrayList<>();
        this.salidas = new ArrayList<>();
    }
-
-    public void añadirCiudadOrigen(Ciudad co){
-        this.ciudorigen = co; 
-    }
-    
-    public void añadirCiudadDestino(Ciudad cd){
+  
+    public void agregarCiudadDestino(Ciudad cd){
         this.ciudadDestino.add(cd); 
     }
     
-    public void añadirPasoFronterizo(PasoFronterizo pf){
+    public void agregarPasoFronterizo(PasoFronterizo pf){
         this.pasosFronterizos.add(pf); 
     }
     
-    public void añadirServicio(Servicio s, int desde, int hasta){
+    public void agregarServicio(Servicio s, int desde, int hasta){
         ServicioPaquete sp = new ServicioPaquete(s,desde, hasta);
         this.serviciosPaquetes.add(sp);
     }
@@ -60,6 +56,11 @@ public class Paquete {
         this.cantdias = cantd;
         this.cantnoches = cantn;
         this.estado = estado;
+    }
+    
+    public void crearSalida(){
+        this.salida = new Salida();
+        
     }
 
     public String getNombre() {
@@ -169,6 +170,21 @@ public class Paquete {
     @Override
     public String toString() {
         return "Paquete{" + "nombre=" + nombre + ", descripcion=" + descripcion + ", itinerario=" + itinerario + ", condcomerciales=" + condcomerciales + ", cantdias=" + cantdias + ", cantnoches=" + cantnoches + ", ciudorigen=" + ciudorigen + ", ciuddestino=" + ciuddestino + ", ciudadDestino=" + ciudadDestino + ", pasosFronterizos=" + pasosFronterizos + ", serviciosPaquetes=" + serviciosPaquetes + ", salidas=" + salidas + ", estado=" + estado + '}';
+    }
+
+    public void crearServicioSalida(ServicioPrestador servicioprestador, float precio, int cupo) {
+       this.salida.crearServicioSalida(servicioprestador, precio, cupo);
+    }
+
+    public void crearTarifa(Base base, float precio) {
+        this.salida.crearTarifa(base, precio);
+    }
+
+    public void agregarSalida(int cupo, String fecha) {
+        this.salida.setCupo(cupo);
+        this.salida.setFecha(fecha);
+        this.salida.setEstado(EstadoSalida.EJECUCION);
+        this.salidas.add(salida);
     }
     
     

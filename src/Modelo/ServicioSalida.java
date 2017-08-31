@@ -12,10 +12,12 @@ package Modelo;
 public class ServicioSalida {
     private float precio;
     private int cupo;
+    private ServicioPrestador servicioprestador;
 
-    public ServicioSalida(float precio, int cupo) {
+    public ServicioSalida(ServicioPrestador sprestador,float precio, int cupo) {
         this.precio = precio;
         this.cupo = cupo;
+        this.servicioprestador = sprestador;
     }
 
     public float getPrecio() {
