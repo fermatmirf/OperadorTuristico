@@ -6,6 +6,7 @@
 package Presentador;
 
 import Modelo.ControlarEstadosSalidas;
+import Vista.*;
 import java.util.Timer;
 
 /**
@@ -16,9 +17,16 @@ public class Main {
 
     public static void main(String[] args) {
         Timer t = new Timer();
-        ControlarEstadosSalidas ces = new ControlarEstadosSalidas(salidas);
-        // This task is scheduled to run every 10 seconds
-
+        ControlarEstadosSalidas ces = new ControlarEstadosSalidas(ClaseEstatica.paquetes);
         t.scheduleAtFixedRate(ces, 0, 3600000);
+
+        VistaPrincipal vistaPrincipal = new VistaPrincipal();
+        VistaCrearSalida vistaCrearSalida = new VistaCrearSalida();
+        VistaCrearPaquete vistaCrearPaquete = new VistaCrearPaquete();
+        VistaModificarEstado vistaModificarEstado = new VistaModificarEstado();
+
+        PresentadorPrincipal presentadorPrincipal = new PresentadorPrincipal(vistaPrincipal, vistaCrearSalida, vistaCrearPaquete, vistaModificarEstado);
+
+        presentadorPrincipal.run();
     }
 }

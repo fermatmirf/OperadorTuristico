@@ -16,34 +16,39 @@ import java.util.TimerTask;
  * @author au6usto
  */
 public class ControlarEstadosSalidas extends TimerTask {
-    private ArrayList<Salida> salidas;
-    ZoneId zonedId = ZoneId.of( "America/Argentina/Buenos_Aires" );    
+
+    private ArrayList<Paquete> paquetes;
+    ZoneId zonedId = ZoneId.of("America/Argentina/Buenos_Aires");
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MMM-dd");
-        
-    public ControlarEstadosSalidas(ArrayList<Salida> salidas) {
-        this.salidas = salidas;
+
+    public ControlarEstadosSalidas(ArrayList<Paquete> paquetes) {
+        this.paquetes = paquetes;
         formatter = formatter.withZone(zonedId);
         this.cambiarAEstadoEnEjecucion();
         this.cambiarAEstadoFinalizado();
     }
-    
+
     public void cambiarAEstadoEnEjecucion() {
-        for (Salida salida : salidas) {
-            LocalDate fechaSalida = LocalDate.parse(salida.getFecha(), formatter);
-            LocalDate today = LocalDate.now( zonedId );
-            if (fechaSalida.equals(today) && salida.getEstado().equals(EstadoSalida.EN_VENTA) ) {
-                salida.setEstado(EstadoSalida.EJECUCION);
+        for (Paquete paquete : paquetes) {
+            for (Salida salida : paquete.getSalidas()) {
+                LocalDate fechaSalida = LocalDate.parse(salida.getFecha(), formatter);
+                LocalDate today = LocalDate.now(zonedId);
+                if (fechaSalida.equals(today) && salida.getEstado().equals(EstadoSalida.EN_VENTA)) {
+                    salida.setEstado(EstadoSalida.EJECUCION);
+                }
             }
         }
     }
-    
+
     public void cambiarAEstadoFinalizado() {
-        for (Salida salida : salidas) {
-            LocalDate fechaFinalizacion = LocalDate.parse(salida.getFecha(), formatter);
-            fechaFinalizacion.plusDays(15);
-            LocalDate today = LocalDate.now( zonedId );
-            if (fechaFinalizacion.equals(today) && salida.getEstado().equals(EstadoSalida.EJECUCION) ) {
-                salida.setEstado(EstadoSalida.FINALIZADO);
+        for (Paquete paquete : paquetes) {
+            for (Salida salida : paquete.getSalidas()) {
+                LocalDate fechaFinalizacion = LocalDate.parse(salida.getFecha(), formatter);
+                fechaFinalizacion.plusDays(15);
+                LocalDate today = LocalDate.now(zonedId);
+                if (fechaFinalizacion.equals(today) && salida.getEstado().equals(EstadoSalida.EJECUCION)) {
+                    salida.setEstado(EstadoSalida.FINALIZADO);
+                }
             }
         }
     }
@@ -52,5 +57,5 @@ public class ControlarEstadosSalidas extends TimerTask {
     public void run() {
         System.out.println("Pasó 1 hora");
     }
-    
+
 }

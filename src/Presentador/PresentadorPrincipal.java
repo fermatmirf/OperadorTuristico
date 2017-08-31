@@ -26,8 +26,8 @@ public class PresentadorPrincipal {
     vistaCrearPaquete = view3;
     vistaModificarEstado = view4;
 
-    presentadorSalidas = new PresentadorSalidas(vistaCrearSalida, vistaPrincipal);
-    presentadorPaquetes = new PresentadorPaquetes(vistaCrearPaquete);
+    presentadorSalidas = new PresentadorSalidas(vistaCrearSalida);
+    presentadorPaquetes = new PresentadorPaquetes(vistaCrearPaquete, vistaPrincipal);
     presentadorModificarEstado = new PresentadorModificarEstado(vistaModificarEstado);
   }
 

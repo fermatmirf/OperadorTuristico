@@ -10,5 +10,9 @@ package Presentador;
  * @author fermatmir
  */
 public class PresentadorModificarEstado {
+    IVistaModificarEstado vistaModificarEstado;
     
+    public PresentadorModificarEstado(IVistaModificarEstado vistaModificarEstado){
+        this.vistaModificarEstado = vistaModificarEstado;
+    }
 }

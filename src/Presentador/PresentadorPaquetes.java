@@ -16,7 +16,14 @@ import Modelo.Paquete;
 public class PresentadorPaquetes {
     private Paquete p; 
     
-    public PresentadorPaquetes(){};
+    IVistaPrincipal vistaPrincipal;
+    IVistaCrearPaquete vistaCrearPaquete;
+    
+    public PresentadorPaquetes(IVistaCrearPaquete vistaCrearPaquete, IVistaPrincipal vistaPrincipal){
+        this.vistaCrearPaquete = vistaCrearPaquete;
+        this.vistaPrincipal = vistaPrincipal;
+    }
+    
     
     public void iniciarCreacionPaquete(){
         p = new Paquete();
@@ -53,13 +60,9 @@ public class PresentadorPaquetes {
     
     }
     
-    public void ingresarCiudadDestino(){
-    }
-    
-    public void ingresarPasoFronterizo(){
-    }
-    
     public void ingresarServicio(){}
     
-    public void crearPaquete(){}
+    public void crearPaquete(){
+        ClaseEstatica.paquetes.add(p);
+    }
 }

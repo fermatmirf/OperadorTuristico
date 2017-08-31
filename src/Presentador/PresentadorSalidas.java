@@ -10,6 +10,13 @@ package Presentador;
  * @author fermatmir
  */
 public class PresentadorSalidas {
+    
+    IVistaCrearSalida vistaCrearSalida;
+    
+    public PresentadorSalidas(IVistaCrearSalida vistaCrearSalida){
+        this.vistaCrearSalida = vistaCrearSalida;
+    }
+    
     public void iniciarSalida(){
         
     }

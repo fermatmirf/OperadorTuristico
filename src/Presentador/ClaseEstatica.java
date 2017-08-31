@@ -7,6 +7,7 @@ package Presentador;
 
 import Modelo.Ciudad;
 import Modelo.Pais;
+import Modelo.Paquete;
 import Modelo.PasoFronterizo;
 import Modelo.Prestador;
 import Modelo.Provincia;
@@ -28,6 +29,7 @@ public abstract class ClaseEstatica {
     public static ArrayList<ServicioPaquete> serviciosDePaquetes = new ArrayList<>();
     public static ArrayList<Prestador> prestadores = new ArrayList<>();
     public static ArrayList<Rubro> rubros = new ArrayList<>();
+    public static ArrayList<Paquete> paquetes = new ArrayList<>();
 
     public void crearPaises() {
         Ciudad c1 = new Ciudad("Machu Pichu");
